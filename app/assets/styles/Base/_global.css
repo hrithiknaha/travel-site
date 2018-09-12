@@ -8,3 +8,11 @@ img{
 	height: auto;
 }
 
+*{
+	box-sizing: border-box;  /*Makes the Browser take the padding as well as the total width*/
+}
+
+a{
+	color: $mainOrange;
+}
+

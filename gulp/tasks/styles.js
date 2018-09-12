@@ -3,12 +3,13 @@ var gulp = require('gulp'),
 	autoprefixer = require('autoprefixer'),
 	cssvars = require('postcss-simple-vars'),
 	nested = require('postcss-nested'),
-	cssimport = require('postcss-import');
+	cssimport = require('postcss-import'),
+	mixins = require('postcss-mixins');
 
 gulp.task('styles', function(){
 	return gulp.src('./app/assets/styles/styles.css')
-	.pipe(postcss([cssimport, cssvars, nested, autoprefixer]))
-	.on('error', function(errInfo){
+	.pipe(postcss([cssimport, mixins, cssvars, nested, autoprefixer]))
+	.on('error', function(errInfo){		//Error Handling in Gulp
 		console.log(errInfo.toString());
 		this.emit('end');		//Used to handel the error properly, without intreuppting the watch task, just remember it or copy it.
 	})

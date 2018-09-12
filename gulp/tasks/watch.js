@@ -12,7 +12,7 @@ gulp.task('watch', function(){
 	});
 
 	watch('./app/index.html', function(){
-		browsersync.reload();
+		browsersync.reload();		//Auto reload on save change
 	});
 	watch('./app/assets/styles/**/*.css', function(){
 		gulp.start('cssInject');
@@ -22,6 +22,6 @@ gulp.task('watch', function(){
 
 gulp.task('cssInject', ['styles'], function(){
 	return gulp.src('./app/temp/styles/styles.css')
-	.pipe(browsersync.stream());
+	.pipe(browsersync.stream());		//Auto Change in CSS Change, No reload
 });
 
