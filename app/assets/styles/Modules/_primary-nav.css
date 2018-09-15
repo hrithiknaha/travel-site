@@ -2,8 +2,11 @@
 	
 
 	&--pull-right{
-		float: right;
 		padding-top: 9px;
+
+		@mixin atMedium{
+			float: right;
+		}
 	}
 
 	ul{
@@ -14,13 +17,37 @@
 
 	li{
 		list-style: none;
-		float: left;
-		padding-right: 20px;
+		display: inline-block;
+		padding-right: 7px;
+
+		@mixin atMedium{
+			padding-right: 7px;
+			float: left;
+			display: block;
+		}
+	}
+
+	li:last-child{
+		padding-right: 0;
+
+		@mixin atMedium{
+			padding-right: 20px;
+		}
 	}
 
 	a{
 		color: #fff;
 		font-weight: 300;
 		text-decoration: none;
+		display: block;
+		padding: 5px 8px;
+		font-size: 0.8rem;
+		background-color: rgba($mainBlue, .5);
+
+		@mixin atMedium{
+			padding: 12px 0;
+			font-size: 1rem;
+			background-color: transparent;
+		}
 	}
 }
